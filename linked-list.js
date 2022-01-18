@@ -20,15 +20,37 @@ class LinkedList {
 
   /** push(val): add new value to end of list. */
 
-  push(val) {
-
-  }
+    push(val) {
+      // create a new node and tell that tail now refrences new node
+        const newNode = new Node(val);
+        if(this.head){   // if it is the first head
+            this.tail.next = newNode;
+            this.tail = this.tail.next;
+        }
+        else{   // if it is not the first head
+            this.head = newNode;
+            this.tail = newNode;
+        }
+        this.length++;
+    }
 
   /** unshift(val): add new value to start of list. */
 
-  unshift(val) {
-
-  }
+    unshift(val) {
+        const newNode = new Node(val);
+        if(this.head === null){
+            this.head = newNode;
+        }
+        else{
+            newNode.next = this.head;
+            this.head = newNode;
+            // this.tail = newNode;
+        }
+        if(this.length === 0){
+            this.tail = this.head;
+        }
+        this.length++;
+    }
 
   /** pop(): return & remove last item. */
 
@@ -74,3 +96,9 @@ class LinkedList {
 }
 
 module.exports = LinkedList;
+
+
+// const newN = new Node('a');
+// console.log(newN.val);
+// console.log(newN.next); 
+// console.log(newN.Node); 
