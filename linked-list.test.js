@@ -1,3 +1,7 @@
+// To run jest test, do jest test_file.test.js
+// jest linked-list.test.js
+
+
 const LinkedList = require("./linked-list");
 
 describe("push", function() {
@@ -22,6 +26,8 @@ describe("push", function() {
     expect(lst.tail.val).toBe(15);
   });
 });
+
+
 
 describe("unshift", function() {
   it("adds node at start and increments length", function() {
